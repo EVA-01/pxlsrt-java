@@ -37,7 +37,7 @@ public class Pxl implements Comparable<Pxl>{
         return color;
     }
     public double grey() {
-        return (red() * 0.2126 + green() * 0.7152 + blue() * 0.0722) / 3.0;
+        return red() * 0.3 + green() * 0.59 + blue() * 0.11;
     }
     public void sobel(double s) {
         sobel = s;

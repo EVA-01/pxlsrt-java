@@ -422,7 +422,7 @@ public class Pxlsrt {
                 double t8 = pxl(x, y + 1).grey();
                 double t9 = pxl(x + 1, y + 1).grey();
                 double pixel_x = sobel_x[0][0] * t1 + sobel_x[0][1] * t2 + sobel_x[0][2] * t3 + sobel_x[1][0] * t4 + sobel_x[1][1] * t5 + sobel_x[1][2] * t6 + sobel_x[2][0] * t7 + sobel_x[2][1] * t8 + sobel_x[2][2] * t9;
-		double pixel_y = sobel_y[0][0] * t1 + sobel_y[0][1] * t2 + sobel_y[0][2] * t3 + sobel_y[1][0] * t4 + sobel_y[1][1] * t5 + sobel_y[1][2] * t6 + sobel_y[2][0] * t7 + sobel_y[2][1] * t8 + sobel_y[2][2] * t9;
+				double pixel_y = sobel_y[0][0] * t1 + sobel_y[0][1] * t2 + sobel_y[0][2] * t3 + sobel_y[1][0] * t4 + sobel_y[1][1] * t5 + sobel_y[1][2] * t6 + sobel_y[2][0] * t7 + sobel_y[2][1] * t8 + sobel_y[2][2] * t9;
                 return Math.sqrt(pixel_x * pixel_x + pixel_y * pixel_y);
             } else {
                 return 0;
