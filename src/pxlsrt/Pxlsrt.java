@@ -292,16 +292,20 @@ public class Pxlsrt {
             band[p].avg(avg);
         }
     }
+    public static void shuffle(Pxl[] array) {
+        int n = array.length;
+        for (int i = 0; i < array.length; i++) {
+            int random = i + (int) (Math.random() * (n - i));
+            Pxl randomElement = array[random];
+            array[random] = array[i];
+            array[i] = randomElement;
+        }
+    }
     public Pxl[] srt(Pxl[] band, int middlate) {
         if(band.length < 1) {
             return band;
         }
-        if(!"none".equals(band[0].method())) {
-            if("uniqueness".equals(band[0].method())) {
-                average(band);
-            }
-            Arrays.sort(band);
-        } else {
+        if("none".equals(band[0].method())) {
             if(band[0].reverse()) {
                 int start = 0;
                 int end = band.length - 1;
@@ -313,6 +317,13 @@ public class Pxlsrt {
                     end--;
                 }
             }
+        } else if("random".equals(band[0].method())) {
+            shuffle(band);
+        } else {
+            if("uniqueness".equals(band[0].method())) {
+                average(band);
+            }
+            Arrays.sort(band);
         }
         return middlate(band, middlate);
     }
